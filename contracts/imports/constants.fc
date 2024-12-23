@@ -1,0 +1,5 @@
+const int error::not_owner_admin = 69;
+const int error::not_admin = 707;
+const int error::index = 708;
+const int error::buyer_limit_incorrect = 709;
+const int error::min_price = 710;

@@ -1,0 +1,38 @@
+;; #include "imports/stdlib.fc";
+
+;; global slice admin_address;
+;; global cell investor_list;
+;; global int min_amount;
+
+;; () recv_internal(int my_balance, int msg_value, cell in_msg_full, slice in_msg_body) impure {
+;;     if (in_msg_body.slice_empty?()) { ;; ignore empty messages
+;;       return ();
+;;     }
+
+;;     slice cs = in_msg_full.begin_parse();
+;;     int flags = cs~load_uint(4);
+
+;;     if (flags & 1) { ;; ignore all bounced messages
+;;       return ();
+;;     }
+
+;;     slice sender_address = cs~load_msg_addr();
+
+;;     int op = in_msg_body~load_uint(32);
+
+;;     load_data();
+
+;;     if (op == 1) { ;; рапределение крипты 
+
+;;     }
+
+;;     if (op == 2) { ;; возможность обновление контракта 
+;;         throw_unless(123, equal_slices(sender_address, admin_address));
+;;         (cell new_data, cell new_code) = (in_msg_body~load_ref(), in_msg_body~load_ref());
+;;         set_data(new_data);
+;;         set_code(new_code);
+;;         return ();
+;;     }
+
+;;     throw(0xffff);
+;; }
